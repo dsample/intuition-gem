@@ -1,5 +1,5 @@
 require 'webmock/rspec'
 
-require 'simplecov' if ENV['COVERAGE'] == 'true'
+require 'simplecov' if ENV['COVERAGE'] == 'true' || ENV['TRAVIS']
 
-require 'meerkat'
+require 'intuition'

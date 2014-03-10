@@ -7,9 +7,7 @@ RSpec::Core::RakeTask.new(:spec) do |options|
 end
 
 desc "Run code coverage stats"
-task :coverage do
+task :default do
 	ENV['COVERAGE'] = "true"
   Rake::Task['spec'].execute
 end
-
-task :default => :spec
