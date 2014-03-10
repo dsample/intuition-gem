@@ -27,6 +27,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'simplecov-gem-adapter'
   gem.add_development_dependency 'coveralls'
   gem.add_development_dependency 'rb-inotify', '>= 0.8.8'
-
-  gem.add_runtime_dependency 'rake'
 end
