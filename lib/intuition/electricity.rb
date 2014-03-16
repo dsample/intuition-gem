@@ -30,21 +30,3 @@ module Intuition
     end
   end
 end
-
-
-# <electricity id='443719003367'>
-#   <signal rssi='-61' lqi='3'/>
-#   <battery level='100%'/>
-#   <chan id='0'>
-#     <curr units='w'>466.00</curr>
-#     <day units='wh'>1671.15</day>
-#   </chan>
-#   <chan id='1'>
-#     <curr units='w'>0.00</curr>
-#     <day units='wh'>0.00</day>
-#   </chan>
-#   <chan id='2'>
-#     <curr units='w'>0.00</curr>
-#     <day units='wh'>0.00</day>
-#   </chan>
-# </electricity>
