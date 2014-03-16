@@ -12,7 +12,7 @@ module Intuition
 
       heating.timestamp = Time.at(xml.xpath('/heating/timestamp').text.to_i)
 
-      xml.xpath('/heating/zone').first do |zone|
+      xml.xpath('/heating/zones').first do |zone|
         heating.current_state = zone.xpath('./temperature/@state').text.to_i
         heating.current_state_until = Time.at(zone.xpath('./temperature/@until').text.to_i)
 
