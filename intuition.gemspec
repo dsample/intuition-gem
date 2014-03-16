@@ -18,6 +18,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^spec/})
   gem.require_paths = ['lib']
 
+  gem.add_runtime_dependency 'nokogiri'
+  gem.add_runtime_dependency 'eventmachine'
+
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'bundler', '~> 1.5'
   gem.add_development_dependency 'rspec'
