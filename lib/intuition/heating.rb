@@ -10,7 +10,7 @@ module Intuition
 
       heating = Heating.new
 
-      heating.timestamp = Time.at(zone.xpath('./timestamp').text.to_i)
+      heating.timestamp = Time.at(xml.xpath('/heating/timestamp').text.to_i)
 
       xml.xpath('/heating/zone').first do |zone|
         heating.current_state = zone.xpath('./temperature/@state').text.to_i
