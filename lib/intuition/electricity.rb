@@ -22,7 +22,7 @@ module Intuition
         chan[:current_value] = channel.xpath('./curr').text.to_f
 
         chan[:day_units] = channel.xpath('./day/@units').text
-        chan[:day_value] = channel.xpath('./day/').text.to_f
+        chan[:day_value] = channel.xpath('./day').text.to_f
 
         elec.channels.push chan
         elec.current_value += chan[:current_value]
