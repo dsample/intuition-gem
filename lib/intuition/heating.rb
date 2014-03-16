@@ -19,6 +19,8 @@ module Intuition
         heating.current_temperature = zone.xpath('./temperature/current').text.to_f
         heating.required_temperature = zone.xpath('./temperature/required').text.to_f
       end
+
+      return heating
     end
   end
 end

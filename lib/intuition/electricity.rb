@@ -27,6 +27,8 @@ module Intuition
         elec.channels.push chan
         elec.current_value += chan[:current_value]
       end
+
+      return elec
     end
   end
 end

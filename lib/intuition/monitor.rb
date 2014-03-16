@@ -11,15 +11,16 @@ module Intuition
       xml = Nokogiri.XML data
       case xml.root.node_name.downcase.to_sym
       when :electricity
-        Electricity.from_xml data
+        reading = Electricity.from_xml data
       when :heating
-        Heating.from_xml data
+        reading = Heating.from_xml data
       else
         puts "Received: #{xml.root.node_name} - #{data}"
         return
       end
 
       # Emit event to store reading
+      puts reading.inspect
     end
 
     def unbind
