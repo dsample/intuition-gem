@@ -3,5 +3,9 @@
 require 'intuition'
 
 owl_listen_port = ARGV[0] || ENV['OWL_LISTEN_PORT'] || 22600
+mongo_server_address = ARGV[1] || ENV['MONGO_SERVER_ADDRESS'] || 'localhost'
 
-Intuition::Owl.start_listening(owl_listen_port)
+#Intuition::Owl.start_listening(owl_listen_port)
+
+Intuition::Owl.start_listening(owl_listen_port, 
+  Intuition::Collectors::MongoDB.new(mongo_server_address))

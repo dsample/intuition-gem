@@ -9,12 +9,12 @@ module Intuition
       #@socket Socket.new(:INET, :DGRAM)
     end
 
-    def self.start_listening(port)
+    def self.start_listening(port, collector=nil)
       EventMachine.run do
         Signal.trap("INT") { EventMachine.stop }
         Signal.trap("TERM") { EventMachine.stop }
 
-        Monitor.listen port
+        Monitor.listen port, collector
       end
     end
   end

@@ -20,14 +20,16 @@ module Intuition
       end
 
       # Emit event to store reading
-      puts reading.inspect
+      @@collector.collect reading if @@collector
+      puts reading.inspect unless @@collector
     end
 
     def unbind
       puts "Stopping listening for Owl messages"
     end
 
-    def self.listen(port)
+    def self.listen(port, collector=nil)
+      @@collector = collector if collector
       EventMachine::open_datagram_socket('0.0.0.0', port, Monitor)
     end
   end
