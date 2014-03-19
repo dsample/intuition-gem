@@ -31,7 +31,7 @@ module Intuition
       return elec
     end
 
-    def to_bson
+    def to_hash
       hash = Hash.new
       hash[:type] = 'Electricity'
       hash[:time] = @timestamp.utc

@@ -17,7 +17,7 @@ module Intuition
 
         collection = @collections[event.class.to_s]
 
-        bson = event.to_bson
+        bson = event.to_hash
 
         puts "#{bson[:time]} #{collection_name}"
         collection.insert bson

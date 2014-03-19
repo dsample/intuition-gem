@@ -8,14 +8,11 @@ module Intuition
     def self.from_xml(data)
       xml = Nokogiri.XML(data)
 
-      puts data
-
       heating = Heating.new
 
       heating.timestamp = Time.at(xml.xpath('/heating/timestamp').text.to_i)
 
       xml.xpath('/heating/zones/zone').each do |zone|
-        puts "Found a zone"
         heating.state = zone.xpath('./temperature/@state').text.to_i
         heating.state_until = Time.at(zone.xpath('./temperature/@until').text.to_i)
 
@@ -26,7 +23,7 @@ module Intuition
       return heating
     end
 
-    def to_bson
+    def to_hash
       hash = Hash.new
       hash[:type] = 'Heating'
       hash[:time] = @timestamp.utc
